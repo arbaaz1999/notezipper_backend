@@ -4,10 +4,8 @@ const protect = (req, res, next) => {
     try {
         console.log("inside this")
         const token = req.headers.authorization.split(' ')[1];
-        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-        console.log(decodedToken)
-        req.decodedToken = decodedToken
-        const userId = decodedToken.id;
+        const decodedToken = jwt.verify(token, process.env.JWT_SCERET);
+        const userId = decodedToken.userId;
         if (req.body.userId && req.body.userId !== userId) {
             throw 'Invalid user ID';
         } else {
