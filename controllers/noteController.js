@@ -4,7 +4,10 @@ const asyncHandler = require('express-async-handler')
 
 const getNotes = asyncHandler(
     async (req, res) => {
-        const notes = await Note.find({})
+        const id = req.decodedToken.id
+        console.log("token inside id is", id)
+        const notes = await Note.find({ _id: id })
+        console.log("notes are", notes)
         res.json(notes)
     }
 )
