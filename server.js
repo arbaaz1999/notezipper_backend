@@ -34,8 +34,8 @@ const port = process.env.PORT || 443;
 
 const server = https.createServer(
   {
-    key: fs.readFileSync(`./localhost-key.pem`, "utf8"),
-    cert: fs.readFileSync(`./localhost.pem`, "utf8"),
+    key: fs.readFileSync(`./localhost+2-key.pem`, "utf8"),
+    cert: fs.readFileSync(`./localhost+2.pem`, "utf8"),
   },
   app
 );

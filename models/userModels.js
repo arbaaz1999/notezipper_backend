@@ -44,7 +44,6 @@ userSchema.pre('save', async function (next) {
     } catch (error) {
         console.log(error)
     }
-
 })
 
 /* userSchema.methods.matchPassword = async function (enterPassword) {
